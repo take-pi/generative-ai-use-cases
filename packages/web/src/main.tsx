@@ -50,6 +50,7 @@ import GenerateDiagramPage from './pages/GenerateDiagramPage.tsx';
 import WriterPage from './pages/WriterPage.tsx';
 import useUseCases from './hooks/useUseCases';
 import { Toaster } from 'sonner';
+import ServiceWorkerUpdater from './components/ServiceWorkerUpdater';
 
 const ragEnabled: boolean = import.meta.env.VITE_APP_RAG_ENABLED === 'true';
 const ragKnowledgeBaseEnabled: boolean =
@@ -330,6 +331,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Authenticator.Provider>
         <RouterProvider router={router} />
         <Toaster />
+        <ServiceWorkerUpdater />
       </Authenticator.Provider>
     </React.Suspense>
   </React.StrictMode>
